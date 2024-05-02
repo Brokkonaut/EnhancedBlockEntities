@@ -13,6 +13,7 @@ import net.minecraft.client.texture.atlas.AtlasSource;
 import net.minecraft.client.texture.atlas.DirectoryAtlasSource;
 import net.minecraft.client.texture.atlas.SingleAtlasSource;
 import net.minecraft.resource.InputSupplier;
+import net.minecraft.resource.ResourcePackInfo;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.resource.metadata.ResourceMetadataReader;
 import net.minecraft.util.Identifier;
@@ -182,7 +183,7 @@ public class EBEPack implements RuntimeResourcePack {
     }
 
     @Override
-    public Identifier getId() {
+    public String getId() {
         return this.resourcePack.getId();
     }
 
@@ -213,10 +214,10 @@ public class EBEPack implements RuntimeResourcePack {
     public <T> T parseMetadata(ResourceMetadataReader<T> metaReader) throws IOException {
         return this.resourcePack.parseMetadata(metaReader);
     }
-
+    
     @Override
-    public String getName() {
-        return this.resourcePack.getName();
+    public ResourcePackInfo getInfo() {
+        return this.resourcePack.getInfo();
     }
 
     @Override

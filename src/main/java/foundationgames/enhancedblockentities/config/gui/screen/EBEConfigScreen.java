@@ -56,7 +56,7 @@ public class EBEConfigScreen extends SpruceScreen {
     private static final Text DUMP_LABEL = Text.translatable("option.ebe.dump");
 
     private final Text dumpTooltip = GuiUtil.shorten(I18n.translate("option.ebe.dump.comment"), 20);
-    private final RotatingCubeMapRenderer background = new RotatingCubeMapRenderer(TitleScreen.PANORAMA_CUBE_MAP);
+    // private final RotatingCubeMapRenderer background = new RotatingCubeMapRenderer(TitleScreen.PANORAMA_CUBE_MAP);
 
     public EBEConfigScreen(Screen screen) {
         super(Text.translatable("screen.ebe.config"));
@@ -83,7 +83,7 @@ public class EBEConfigScreen extends SpruceScreen {
     }
 
     @Override
-    public void renderBackgroundTexture(DrawContext context) {
+    public void renderBackground(DrawContext context, int mouseX, int mouseY, float delta) {
     }
 
     @Override
@@ -93,7 +93,7 @@ public class EBEConfigScreen extends SpruceScreen {
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         if (this.client.world == null) {
-            this.background.render(delta, 1);
+            // this.background.render(delta, 1);
             RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         }
 
